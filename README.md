@@ -26,22 +26,22 @@ Room Rate Management is a web application built with Django that allows users to
 
 # Usage of this project
  -  Add a Room Rate:
-        - Click on the "Add Room Rate" button.
-        - Fill in the required details for the room rate, including the room ID, rate, and any applicable discounts.
-        - Click "Save" to add the room rate.
+        1. Click on the "Add Room Rate" button.
+        2. Fill in the required details for the room rate, including the room ID, rate, and any applicable discounts.
+        3. Click "Save" to add the room rate.
 
  - Edit a Room Rate:
-        - Locate the room rate you want to edit in the list.
-        - Click on the "Edit" button next to the room rate.
-        - Update the details as needed.
-        - Click "Save" to update the room rate.
+         1. Locate the room rate you want to edit in the list.
+         2. Click on the "Edit" button next to the room rate.
+         3. Update the details as needed.
+         4. Click "Save" to update the room rate.
 
  - Delete a Room Rate:
-        - Locate the room rate you want to delete in the list.
-        - Click on the "Delete" button next to the room rate.
-        - Confirm the deletion when prompted.
+        1. Locate the room rate you want to delete in the list.
+        2. Click on the "Delete" button next to the room rate.
+        3. Confirm the deletion when prompted.
 
  - Filter Room Rates:
-        - Fill in the desired filters in the filter form on the "Filter Room Rates" page.
-        - Click "Filter" to view the filtered room rates based on the selected criteria.
+        1. Fill in the desired filters in the filter form on the "Filter Room Rates" page.
+        2. Click "Filter" to view the filtered room rates based on the selected criteria.
 
