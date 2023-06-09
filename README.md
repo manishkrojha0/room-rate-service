@@ -42,6 +42,6 @@ Room Rate Management is a web application built with Django that allows users to
         3. Confirm the deletion when prompted.
 
  - Filter Room Rates:
-        1. Fill in the desired filters in the filter form on the "Filter Room Rates" page.
-        2. Click "Filter" to view the filtered room rates based on the selected criteria.
+   1. Fill in the desired filters in the filter form on the "Filter Room Rates" page.
+   2. Click "Filter" to view the filtered room rates based on the selected criteria.
 
