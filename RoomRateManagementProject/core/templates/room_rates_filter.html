@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Rates</title>
+</head>
+<body>
+    <h1>Room Rates</h1>
+    <form method="GET" action="{% url 'room-rates' %}">
+        <label for="room-id">Room ID:</label>
+        <input type="text" name="room_id" id="room-id" value="{{ room_id }}">
+        <br>
+        <label for="start-date">Start Date:</label>
+        <input type="date" name="start_date" id="start-date" value="{{ start_date }}">
+        <br>
+        <label for="end-date">End Date:</label>
+        <input type="date" name="end_date" id="end-date" value="{{ end_date }}">
+        <br>
+        <input type="submit" value="Filter">
+    </form>
+
+    {% if room_rates %}
+        <h2>Filtered Room Rates</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room ID</th>
+                    <th>Room Name</th>
+                    <th>Room Rate</th>
+                    <th>Final Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for room_rate in room_rates %}
+                    <tr>
+                        <td>{{ room_rate.get('room_id') }}</td>
+                        <td>{{ room_rate.get('room_name') }}</td>
+                        <td>{{ room_rate.get('room_rate') }}</td>
+                        <td>{{ room_rate.get('final_rate') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No room rates found for the specified filters.</p>
+    {% endif %}
+</body>
+</html>

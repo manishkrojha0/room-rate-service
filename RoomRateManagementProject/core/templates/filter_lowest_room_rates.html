@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Filter Lowest Room Rate</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+  </form>
+
+  {% if rates_list %}
+    <h2>Filtered Room Rates:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Room ID</th>
+          <th>Room Name</th>
+          <th>Stay Date</th>
+          <th>Room Rate</th>
+          <th>Final Rate</th>
+          <th>Discounted Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rate in rates_list %}
+          <tr>
+            <td>{{ rate.room_id }}</td>
+            <td>{{ rate.room_name }}</td>
+            <td>{{ rate.stay_date }}</td>
+            <td>{{ rate.room_rate }}</td>
+            <td>{{ rate.final_rate }}</td>
+            <td>{{ rate.discounted_value }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}

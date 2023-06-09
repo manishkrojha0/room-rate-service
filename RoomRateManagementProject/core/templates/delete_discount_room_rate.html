@@ -1,0 +1,10 @@
+<!-- delete_discount_room_rate.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Delete Discount Room Rate</h2>
+    <p>Are you sure you want to delete the discount room rate?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

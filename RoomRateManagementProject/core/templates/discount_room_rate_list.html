@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Discount Room Rates</h2>
+    <table>
+    <thead>
+        <tr>
+        <th>Room ID</th>
+        <th>Room Name</th>
+        <th>Discount</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for discount_room_rate in discount_room_rates %}
+        <tr>
+            <td>{{ discount_room_rate.room_rate.room_id }}</td>
+            <td>{{ discount_room_rate.room_rate.room_name }}</td>
+            <td>{{ discount_room_rate.discount }}</td>
+            <td>
+            <a href="{% url 'discount_room_rate_edit' discount_room_rate.pk %}">Edit</a>
+            <a href="{% url 'discount_room_rate_delete' discount_room_rate.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <br></br>
+    {% block create_discount_room_rate %}
+      <a href="{% url 'discount_room_rate_create' %}">Create Discount Room Rate</a>
+      <br>
+      <a href="{% url 'filter_discount_room_rate' %}">Filter Discount Room Rate</a>
+    {% endblock %}
+{% endblock %}

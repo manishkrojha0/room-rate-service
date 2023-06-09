@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Room Rate Management System</title>
+</head>
+<body>
+    <header>
+        <h1>Hotel Room Rate Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'room-rate-list' %}">Room Rates</a></li>
+            <li><a href="{% url 'overridden-rate-list' %}">Overridden Rates</a></li>
+            <li><a href="{% url 'discount-list' %}">Discounts</a></li>
+            <li><a href="{% url 'discount-room-rate-list' %}">Discount Room Rates</a></li>
+            <li><a href="{% url 'filter_lowest_room_rate' %}">Lowest Room Rates Filter</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

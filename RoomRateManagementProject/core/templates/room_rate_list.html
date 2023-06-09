@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Room Rates</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Room ID</th>
+        <th>Room Name</th>
+        <th>Default Rate</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for room_rate in room_rates %}
+        <tr>
+          <td>{{ room_rate.room_id }}</td>
+          <td>{{ room_rate.room_name }}</td>
+          <td>{{ room_rate.default_rate }}</td>
+          <td>
+            <!-- <input type="hidden" name="_method" value="PUT"> -->
+            <a href="{% url 'room-rate-update' room_rate.id %}">Edit</a>
+            <!-- <input type="hidden" name="_method" value="DELETE"> -->
+            <a href="{% url 'room-rate-delete' room_rate.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br></br>
+  {% block create_button %}
+    <a href="{% url 'room-rate-create' %}">Create Room Rate</a>
+  {% endblock %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Filter Discount Room Rates</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+  </form>
+
+  {% if discount_room_rates %}
+    <h3>Filtered Discount Room Rates</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Room ID</th>
+          <th>Room Name</th>
+          <th>Discount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for discount_room_rate in discount_room_rates %}
+          <tr>
+            <td>{{ discount_room_rate.room_rate.room_id }}</td>
+            <td>{{ discount_room_rate.room_rate.room_name }}</td>
+            <td>{{ discount_room_rate.discount }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}

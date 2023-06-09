@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Overridden Rates</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Room Rate</th>
+        <th>Overridden Rate</th>
+        <th>Stay Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for overridden_rate in overridden_rates %}
+        <tr>
+          <td>{{ overridden_rate.room_rate }}</td>
+          <td>{{ overridden_rate.overridden_room_rate }}</td>
+          <td>{{ overridden_rate.stay_date }}</td>
+          <td>
+            <a href="{% url 'overridden-rate-update' overridden_rate.id %}">Edit</a>
+            <a href="{% url 'overridden-rate-delete' overridden_rate.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br></br>
+  {% block create_button %}
+    <a href="{% url 'overridden-rate-create' %}">Create Overridden Room Rate</a>
+  {% endblock %}
+{% endblock %}
